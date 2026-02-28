@@ -38,13 +38,11 @@ iowa_model.fit(train_x, train_y)
 #Predict with both datas
 predicted_with_train_data = iowa_model.predict(train_x)
 predicted_with_validation_data = iowa_model.predict(validation_x)
-print('Predicted with only train data :',predicted_with_train_data)
-print('Predicted with validation data :',predicted_with_validation_data)
 
 #Mean absolute error
 from sklearn.metrics import mean_absolute_error
 
-print('Validation MAE:', mean_absolute_error(validation_y,predicted_with_validation_data))
+print('\nValidation MAE:', mean_absolute_error(validation_y,predicted_with_validation_data) , '\n')
 
 #Underfitting vs overfitting
 
