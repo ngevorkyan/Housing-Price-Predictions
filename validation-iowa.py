@@ -46,3 +46,33 @@ from sklearn.metrics import mean_absolute_error
 
 print('Validation MAE:', mean_absolute_error(validation_y,predicted_with_validation_data))
 
+#Underfitting vs overfitting
+
+def get_mae(max_leaf_nodes, train_x, validation_x, train_y, validation_y):
+    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)
+    model.fit(train_x, train_y)
+    predictions = model.predict(validation_x)
+    mae = mean_absolute_error(validation_y, predictions)
+    return mae
+
+
+
+candidate_max_leaf_nodes = [5, 25, 50, 100, 250, 500]
+
+# Store the results
+results = []
+
+for leaf in candidate_max_leaf_nodes:
+    # Compute MAE for the current leaf count
+    my_mae = get_mae(leaf, train_x, validation_x, train_y, validation_y)
+    
+    # Store leaf and MAE as a tuple
+    results.append((leaf, my_mae))
+
+    # Print progress neatly
+    print(f"Leaf nodes: {leaf}\tMean Absolute Error: {my_mae:.2f}")
+
+# Find the leaf count with the minimum MAE
+best_leaf, best_mae = min(results, key=lambda x: x[1])
+
+print(f"\nBest leaf count: {best_leaf} with MAE: {best_mae:.2f}")
