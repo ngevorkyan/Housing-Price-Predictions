@@ -1,7 +1,7 @@
 import pandas as pd
 
 #Sellecting the data for modelling
-iowa_file_path = '/Users/ninogevorkiani/Desktop/Housing-Price-Predictions/0-iowa.csv'
+iowa_file_path = '/Users/ninogevorkiani/Desktop/Housing-Price-Predictions/csv-iowa.csv'
 iowa_data = pd.read_csv(iowa_file_path)
 print(iowa_data.head())
 

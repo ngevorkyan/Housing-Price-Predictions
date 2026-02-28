@@ -2,7 +2,7 @@ import pandas as pd
 
 
 #Sellecting data for modelling
-melbourne_data_path = '/Users/ninogevorkiani/Desktop/Housing-Price-Predictions/melb_data.csv'
+melbourne_data_path = '/Users/ninogevorkiani/Desktop/Housing-Price-Predictions/csv-melbourne.csv'
 melbourne_data = pd.read_csv(melbourne_data_path)
 
 

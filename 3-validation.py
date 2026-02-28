@@ -2,7 +2,7 @@ from sklearn.metrics import mean_absolute_error
 import pandas as pd
 
 #Sellecting data for modelling
-melbourne_data_path = '/Users/ninogevorkiani/Desktop/Housing-Price-Predictions/0-melb_data.csv'
+melbourne_data_path = '/Users/ninogevorkiani/Desktop/Housing-Price-Predictions/csv-melbourne.csv'
 melbourne_data = pd.read_csv(melbourne_data_path)
 
 #Sellecting prediction target
